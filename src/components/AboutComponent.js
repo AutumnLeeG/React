@@ -3,20 +3,21 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 
 function RenderPartner({partner}) {
-    if (partner) {
+    if(partner) {
         return (
             <React.Fragment>
                 <Media object src={partner.image} alt={partner.name} width="150" />
-                <Media body className="ml-5 mb-4"> 
-                    <Media heading> {partner.name}
-                </Media>
+                <Media body className="ml-5 mb-4">
+                    <Media heading>{partner.name}</Media>
                     {partner.description}
                 </Media>
-
             </React.Fragment>
         );
+    } else {
+        return (
+            <div></div>
+        );
     }
-    return(<div/>);
 }
 
 function About(props) {
